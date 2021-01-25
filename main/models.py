@@ -2,7 +2,6 @@ from django.db import models
 
 class ToDo(models.Model):
     title = models.CharField(max_length=50)
-    subtitle = models.CharField(max_length=50)
     price = models.CharField(max_length=10)
     genre = models.CharField(max_length=20)
     author = models.CharField(max_length=50)
