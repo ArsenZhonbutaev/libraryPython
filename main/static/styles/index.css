@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgb(36, 33, 33);
+}
+
+body {
+    background-color: rgb(56, 24, 99);
+}
+
+section {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create_cont {
+    width: 80%;
+}
+
+.create_inp {
+    padding: 12px 5px;
+    font-size: 18px;
+    width: 45%;
+    margin-top: 5px;
+    border: 1px solid rgb(131, 21, 125);
+    border-radius: 10px;
+}
+
+.create_btn {
+    padding: 12px 20px;
+    background-color: rgb(199, 39, 164);
+    border: 1px solid rgb(199, 39, 164);
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 38.5%;
+    margin-top: 5px;
+}
+
+.create_btn:active {
+    border: 1px solid rgb(199, 39, 164);
+    box-shadow: 2px 2px 5px 3px rgb(248, 157, 241);
+}
+
+.book_cont {
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.book_item {
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    width: 24%;
+    padding: 10px 15px;
+    background-color: rgb(250, 131, 131);
+    margin-bottom: 20px;
+}
+
+.book_item.done {
+    background-color: rgb(202, 200, 195);
+    text-decoration: line-through;
+    color: rgb(210, 211, 208);
+}
+
+.book_item.done img {
+    opacity: 0.5;
+}
+
+.book_item.marked {
+    background-color: rgb(91, 248, 112);
+    border: 2px solid rgb(44, 253, 79);
+}
+
+.book_item.done h4,
+.book_item.done p,
+.book_item.done span {
+    color: darkgrey;
+}
+
+.book_item_header {
+    display: flex;
+    align-items: center;
+    min-height: 35px;
+}
+
+.book_item_header h4 {
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+.book_item_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book_item_footer p {
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+.book_item_footer .action_buttons {
+    display: flex;
+}
+
+.book_item_footer img {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    cursor: pointer;
+}
