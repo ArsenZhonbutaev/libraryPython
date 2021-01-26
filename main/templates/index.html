@@ -27,7 +27,11 @@
 
         <div class="book_cont">
             {% for todo in book_list %}
-            <div class="book_item">
+            <div class="book_item
+                {% if todo.is_favorite %}
+                    marked
+                {% endif %}
+            ">
                 <div class="book_item_header">
                     <label class="checkbox_cont">
                         <input type="checkbox">
@@ -40,8 +44,12 @@
                 <div class="book_item_footer">
                     <p>{{ todo.created_at }}</p>
                     <div class="action_btns">
-                        <img src="{% static 'icons/unmarked.png' %}">
-                        <img src="{% static 'icons/delete.png' %}">
+                        {% if todo.is_favorite %}
+                        <a href="{% url 'unmark-book' todo.id %}"><img src="{% static 'icons/marked.png' %}"></a>
+                        {% else %}
+                        <a href="{% url 'mark-book' todo.id %}"><img src="{% static 'icons/unmarked.png' %}"></a>
+                        {% endif %}
+                        <a href="{% url 'delete-book' todo.id %}"><img src="{% static './icons/delete.png' %}" /></a>
                     </div>
                 </div>
                 <h4 class="cap">{{ todo.price }} сомов</h4>

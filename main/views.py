@@ -22,15 +22,21 @@ def add_book(request):
         description=description
         )
     book.save()
-    return redirect("home")
+    return redirect(homepage)
 
-    """ price = form["book_price"]
-    book = ToDo(price=price)
-    author = form["book_author"]
-    book = ToDo(author=author)
-    genre = form["book_genre"]
-    book = ToDo(genre=genre)
-    year = form["book_year"]
-    book = ToDo(year=year)
-    description = form["book_description"]
-    book = ToDo(description=description) """
+def delete_book(request, id):
+    book = ToDo.objects.get(id=id)
+    book.delete()
+    return redirect(homepage)
+
+def mark_book(request, id):
+    book = ToDo.objects.get(id=id)
+    book.is_favorite = True
+    book.save()
+    return redirect(homepage)
+
+def unmark_book(request, id):
+    book = ToDo.objects.get(id=id)
+    book.is_favorite = False
+    book.save()
+    return redirect(homepage)
